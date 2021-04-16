@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-import style from 'styled-components';
-import Character from './components/Character';
+import styled from 'styled-components';
+import CharactersCard from './components/CharactersCard';
 
 function App() {
 	// Try to think through what state you'll need for this app before starting. Then build out
@@ -16,7 +16,6 @@ function App() {
 		axios
 			.get('https://swapi.dev/api/people')
 			.then(res => {
-				// console.log(res.data[0].name);
 				setPeople(res.data);
 			})
 			.catch(err => {
@@ -26,10 +25,20 @@ function App() {
 
 	if (people.length === 0) return <h2>Loading.....</h2>;
 
+	const Card = styled.div`
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 50px;
+		margin: 1rem auto;
+		padding: 1rem 0 3rem;
+		width: 80%;
+		color: white;
+	`;
+
 	return (
 		<div className="App">
-			<h1 className="Header">Characters</h1>
-			<Character people={people} />
+			<Card>
+				<CharactersCard people={people} />
+			</Card>
 		</div>
 	);
 }
