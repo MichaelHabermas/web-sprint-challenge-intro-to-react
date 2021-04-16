@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export default function Character(props) {
 	const { swCharacter } = props;
 
+	// styling for the info in each list item card
 	const Individual = styled.div`
 		display: flex;
 		justify-content: space-between;
