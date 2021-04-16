@@ -4,6 +4,17 @@ import axios from 'axios';
 import styled from 'styled-components';
 import CharactersCard from './components/CharactersCard';
 
+// styling for the main display card background
+const Card = styled.div`
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 50px;
+	margin: 5rem auto;
+	padding: 1rem 0 3rem;
+	width: 80%;
+	color: white;
+	box-shadow: 5px 5px 50px #8a8a8a;
+`;
+
 // This is the main page to display the web application
 function App() {
 	// Try to think through what state you'll need for this app before starting. Then build out
@@ -29,17 +40,6 @@ function App() {
 
 	// safety measure, so that nothing trys to render before the request is finished
 	if (swCharacters.length === 0) return <h2>Loading.....</h2>;
-
-	// styling for the main display card background
-	const Card = styled.div`
-		background-color: rgba(255, 255, 255, 0.3);
-		border-radius: 50px;
-		margin: 5rem auto;
-		padding: 1rem 0 3rem;
-		width: 80%;
-		color: white;
-		box-shadow: 5px 5px 50px #8a8a8a;
-	`;
 
 	return (
 		<div className="App">
