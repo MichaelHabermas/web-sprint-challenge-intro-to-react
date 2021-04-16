@@ -23,7 +23,7 @@ export default function CharactersCard(props) {
 			<h1 className="Header">Star Wars Characters</h1>
 			{swCharacters.map((swCharacter, index) => {
 				return (
-					<ListItem>
+					<ListItem key={index}>
 						<Character key={index} swCharacter={swCharacter} />
 					</ListItem>
 				);
